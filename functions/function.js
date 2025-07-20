@@ -58,4 +58,36 @@ function loginUserMessage(username = "joe"){
 
 // console.log(loginUserMessage("priyanshu")) // Output : priyanshu just logged in
 
-console.log(loginUserMessage()) //Output undefined just logged in
+// console.log(loginUserMessage()) //Output undefined just logged in
+
+
+
+function calculateCarPrice(...num1){ // Spreaded using spread...
+    return num1
+}
+
+// console.log(calculateCarPrice(200, 400, 500)) // REST
+
+const user = {
+    username : "priyanshu",
+    price : 199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`)
+}
+
+// handleObject(user) //First way to pass object
+handleObject ({
+    username : "joe",
+    price : 499
+
+})
+
+
+const myArr = [200, 400, 100, 600]
+
+function returnSecondValue(getArr){
+    return getArr[0]
+}
+console.log(returnSecondValue(myArr))
