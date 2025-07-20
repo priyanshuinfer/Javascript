@@ -61,4 +61,4 @@ console.log(addFour(2,4))
 
 // const myArray = [2, 5, 7, 9, 10]
 
-// myArray.forEach()
+// myArray.forEach()i
