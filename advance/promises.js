@@ -91,7 +91,7 @@ consumePromiseFive()
 //     }
 // }
 
-// getAllUsers()
+// getAllUsers()  // same thod
 
 
 fetch('https://jsonplaceholder.typicode.com/users')
