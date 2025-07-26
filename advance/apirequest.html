@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request | JavaScript</title>
+</head>
+<style>
+    .card{
+        background-color: white;
+        padding : 20px 10px;
+        height: 150px;
+        width: 250px;
+        margin-top : 100px;
+        margin-left: 120px;
+        border: 10px #8c6f6f;
+    }
+    .details{
+        margin-left: 20px;
+        font-size:22px ;
+        font-family: 'Georgia', serif;
+
+
+
+    }
+    .card-pic{
+        height: 80px;
+    }
+</style>
+<body style = "background-color: #212121;">
+    <div class = "card">
+        <img src="" alt="profile-pic" id="profile" class = "card-pic">
+
+        <h1 id = "follow" class = "details">Followers : </h1> 
+        
+
+    </div>    
+</body>
+<script>
+    const reqUrl = 'https://api.github.com/users/priyanshuinfer'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', reqUrl)
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            
+            const pic = data.avatar_url;                
+
+            console.log(pic);                            
+            document.getElementById('profile').src = pic; 
+            const follow = data.followers
+            console.log(follow)
+            document.getElementById("follow").innerText = "followers : " + follow
+
+        }
+    }
+    xhr.send()
+</script>
+</html>
